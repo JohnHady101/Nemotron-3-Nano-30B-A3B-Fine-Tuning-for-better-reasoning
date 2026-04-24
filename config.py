@@ -2,7 +2,7 @@ class Config:
     # Model
     BASE_MODEL   = kagglehub.model_download("metric/nemotron-3-nano-30b-a3b-bf16/transformers/default")   # swap to any causal LM
     DATASET_PATH = "/kaggle/input/datasets/johnhady101/glm5-0-reasoning/train-00000-of-00001.parquet"
-    OUTPUT_DIR   = "./lora-finetuned"
+    OUTPUT_DIR   = "/kaggle/working"
     MERGED_DIR   = "./merged-model"
 
     # Precision — pick ONE:
