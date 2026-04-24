@@ -6,3 +6,4 @@ This code was originally developed for a **Kaggle Notebook** environment and may
 ### plan:
 distilling deepseek v4 on aws EC2 instance (A100 or H100)
 https://aimultiple.com/inference-engines
+https://huggingface.co/spaces/nanotron/ultrascale-playbook?section=high-level_overview
