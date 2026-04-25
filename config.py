@@ -32,7 +32,7 @@ class Config:
     WEIGHT_DECAY   = 0.001
     MAX_GRAD_NORM  = 0.3
     LOGGING_STEPS  = 10
-    SAVE_STEPS     = 100
+    SAVE_STEPS     = 1
     EVAL_STEPS     = 100
     # fp16/bf16 flags passed to TrainingArguments
     FP16           = False      # set True if TORCH_DTYPE is float16
