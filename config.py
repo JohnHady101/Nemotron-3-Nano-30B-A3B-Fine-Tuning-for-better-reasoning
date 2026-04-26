@@ -12,7 +12,7 @@ class Config:
     TORCH_DTYPE  = torch.bfloat16
 
     # Tokenisation
-    MAX_LENGTH   = 1024
+    MAX_LENGTH   = 384
     TRUNCATION   = True
 
     # LoRA
