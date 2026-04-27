@@ -144,6 +144,36 @@ def load_dataset(path: str, tokenizer, val_split: float = 0.1):
 
 # LOAD MODEL + TOKENIZER
 
+from transformers import BitsAndBytesConfig
+
+def load_model_and_tokenizer():
+    bnb_config = BitsAndBytesConfig(
+        load_in_8bit=False,
+        load_in_4bit=False,
+        llm_int8_enable_fp32_cpu_offload=False,
+        bnb_4bit_compute_dtype=torch.bfloat16,
+    ) if not cfg.USE_FP8 else None
+
+    # FP8 via bitsandbytes (requires bnb >= 0.42 + Hopper/Ada GPU)
+    fp8_config = BitsAndBytesConfig(
+        load_in_8bit=True,
+        llm_int8_has_fp16_weight=False,
+        bnb_8bit_compute_dtype=torch.float8_e4m3fn,   # E4M3 format
+        bnb_8bit_use_double_quant=True,
+    )
+
+    model = AutoModelForCausalLM.from_pretrained(
+        cfg.BASE_MODEL,
+        quantization_config=fp8_config,
+        device_map="auto",
+        trust_remote_code=True,
+    )
+
+    # Must call this before attaching LoRA to a quantized model
+    model = prepare_model_for_kbit_training(model)
+
+
+
 
 def load_model_and_tokenizer():
     logger.info(f"Loading tokenizer: {cfg.BASE_MODEL}")

@@ -10,6 +10,7 @@ class Config:
     #   torch.float16  → faster on older GPUs (Volta / Turing)
     #   torch.bfloat16 → preferred on Ampere+ (A100, RTX 3090+)
     TORCH_DTYPE  = torch.bfloat16
+    USE_FP8 = True
 
     # Tokenisation
     MAX_LENGTH   = 384
@@ -32,8 +33,8 @@ class Config:
     WEIGHT_DECAY   = 0.001
     MAX_GRAD_NORM  = 0.3
     LOGGING_STEPS  = 10
-    SAVE_STEPS     = 1
-    EVAL_STEPS     = 100
+    SAVE_STEPS     = 500
+    EVAL_STEPS     = 500
     # fp16/bf16 flags passed to TrainingArguments
     FP16           = False      # set True if TORCH_DTYPE is float16
     BF16           = True       # set True if TORCH_DTYPE is bfloat16
