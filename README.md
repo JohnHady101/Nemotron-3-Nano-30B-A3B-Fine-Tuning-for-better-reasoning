@@ -15,6 +15,10 @@ https://claude.ai/chat/80334e97-3906-4b86-b2fc-3e30a2e89b1a
 https://huggingface.co/datasets/a-m-team/AM-DeepSeek-R1-Distilled-1.4M
 https://www.bentoml.com/blog/the-complete-guide-to-deepseek-models-from-v3-to-r1-and-beyond
 
+### Resource for knowledge distillation
+https://arxiv.org/pdf/2511.02833v3
+https://huggingface.co/blog/Kseniase/kd
+
 # Inference Time Analysis — 9500 Reasoning Answers with DeepSeek-R1 on 8×H200 (vLLM)
 
 ## 1. Assumptions (Realistic, Not Optimistic)
